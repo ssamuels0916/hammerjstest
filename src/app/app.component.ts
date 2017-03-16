@@ -14,31 +14,31 @@ export class AppComponent {
   navItems = [
     {
       id:0,
-      listName: 'first',
+      listName: 'Account Selection',
 
       visible: true
     },
     {
       id:1,
-      listName: 'second',
+      listName: 'Portfolio Selection',
    
       visible: false
     },
     {
       id:2,
-      listName: 'third',
+      listName: 'Personal Details',
      
       visible: false
     },
     {
       id:3,
-      listName: 'fourth',
+      listName: 'Deposit Details',
    
       visible: false
     },
     {
       id:4,
-      listName: 'fifth',
+      listName: 'Review Sign',
    
       visible: false
     }
@@ -46,26 +46,26 @@ export class AppComponent {
 
   //action triggered when user swipes
   swipe(currentIndex: number, action = this.SWIPE_ACTION.RIGHT) {
-
+    console.log(currentIndex);
     //if out of range
     if (currentIndex > this.navItems.length || currentIndex < 0) return;
-
     let nextIndex = 0;
 
     //if swipe right, next nav item
     if(action === this.SWIPE_ACTION.RIGHT){
-      const isLast = currentIndex === this.navItems.length - 1;
-      nextIndex = isLast ? 0 : currentIndex + 1;
-    }
-
-    //if swipe left, previous nav item
-    if(action === this.SWIPE_ACTION.LEFT) {
       const isFirst = currentIndex === 0;
       nextIndex = isFirst ? this.navItems.length - 1 : currentIndex - 1;
     }
 
+    //if swipe left, previous nav item
+    if(action === this.SWIPE_ACTION.LEFT) {
+      const isLast = currentIndex === this.navItems.length - 1;
+      nextIndex = isLast ? 0 : currentIndex + 1;
+    }
+
     // toggle nav item visibility
-    this.navItems.forEach((x, i) => x.visible = (i === nextIndex));
+    let i = 2;
+      this.navItems.forEach((x, i) => x.visible = (i === nextIndex));
   }
 
 

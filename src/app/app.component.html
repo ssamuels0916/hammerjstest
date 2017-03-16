@@ -1,13 +1,13 @@
 <h1>{{topic}}</h1>
-<div class="swipe-items"
-  *ngFor="let item of navItems; let idx=index"
-  (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)"
-  [class.visible]="item.visible" [class.hidden]="!item.visible"
-  >
-  <div>
-    <ul>
-      <li>{{item.listName}}</li>
-    </ul>
+<div class="flex-div">
+  <div class="swipe-items"
+    *ngFor="let item of navItems; let idx=index"
+    (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)"
+    [class.visible]="item.visible" [class.hidden]="!item.visible">
+    <div class="nav-item">
+      <ul>
+        <li>{{item.listName}}</li>
+      </ul>
+    </div>
   </div>
-
 </div>

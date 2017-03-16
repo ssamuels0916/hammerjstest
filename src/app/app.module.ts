@@ -8,7 +8,7 @@ import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-br
 import { AppComponent } from './app.component';
 export class MyHammerConfig extends HammerGestureConfig  {
   overrides = <any>{
-      'swipe': {velocity: 0.4, threshold: 20} // override default settings
+      'swipe': {velocity: 0.4, threshold: 10} // override default settings
   }
 }
 
